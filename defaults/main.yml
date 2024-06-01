@@ -1,0 +1,6 @@
+---
+# defaults file for .
+netbird:
+  mgmt_url: https://app.netbird.io:443/
+  setup_key: ""
+  skip_login: False

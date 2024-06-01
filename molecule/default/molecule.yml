@@ -1,0 +1,8 @@
+---
+driver:
+  name: vagrant
+  provider:
+    name: libvirt
+platforms:
+  - name: debian12
+    box: debian/bookworm64

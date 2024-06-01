@@ -1,0 +1,18 @@
+---
+- name: Setup APT Repo
+  ansible.builtin.deb822_repository:
+    name: netbird
+    state: present
+    types: deb
+    uris: https://pkgs.netbird.io/debian
+    suites: stable
+    components: main
+    signed_by: https://pkgs.netbird.io/debian/public.key
+- name: Install Netbird
+  ansible.builtin.apt:
+    name: netbird
+    state: present
+    update_cache: true
+- name: Login to Netbird
+  shell: netbird up -m {{ netbird.mgmt_url }} --setup-key {{ netbird.setup_key }}
+  when: netbird.skip_login == False
