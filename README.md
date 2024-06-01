@@ -16,7 +16,7 @@ Role Variables
 | -------------------- | ------------------------------------------- | :---------------------------- |
 | netbird.mgmt_url   | Management Server                         | https://app.netbird.io:443/ |
 | netbird.setup_key  | Setup Key used when registering the agent | ""                          |
-| netbird.skip_login | Skip Login setup                          | False                       |
+| netbird.skip_login | Skip Login step, useful for testing       | False                       |
 
 Dependencies
 ------------
@@ -30,9 +30,13 @@ Including an example of how to use your role (for instance, with variables passe
 
 - hosts: servers
   roles:
-  - { role: username.rolename, x: 42 }
-    License
+  - crimsonfez.netbird
+  vars:
+    netbird:
+      mgmt_url: https://netbird.example.com
+      setup_key: "1234567890"
 
+License
 ---
 
 MIT
