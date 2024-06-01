@@ -1,4 +1,8 @@
 ---
+- name: Install System Dependencies
+  ansible.builtin.apt:
+    name: python3-debian
+    state: present
 - name: Setup APT Repo
   ansible.builtin.deb822_repository:
     name: netbird
