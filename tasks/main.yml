@@ -14,5 +14,5 @@
     state: present
     update_cache: true
 - name: Login to Netbird
-  shell: netbird up -m {{ netbird.mgmt_url }} --setup-key {{ netbird.setup_key }}
-  when: netbird.skip_login == False
+  shell: netbird up -m {{ netbird_mgmt_url }} --setup-key {{ netbird_setup_key }}
+  when: netbird_skip_login == False

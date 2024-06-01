@@ -4,8 +4,7 @@
   gather_facts: false
   become: true
   vars:
-    netbird:
-      skip_login: True
+    netbird_skip_login: True
   roles:
     - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
   tasks:
